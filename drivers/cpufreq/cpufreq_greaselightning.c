@@ -794,7 +794,8 @@ rapid_min_cpu_load = RAPID_MIN_CPU_LOAD;
 
         /* Scale up is high priority */
         up_wq = alloc_workqueue("kgreaselightning_up", WQ_HIGHPRI | WQ_CPU_INTENSIVE, 1);
-   down_wq = create_workqueue("kgreaselightning_down");
+  	down_wq = create_workqueue("kgreaselightning_down");
+ superbad
 
         INIT_WORK(&freq_scale_work, cpufreq_greaselightning_freq_change_time_work);
 

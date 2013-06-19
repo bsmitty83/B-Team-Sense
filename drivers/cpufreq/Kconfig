@@ -322,7 +322,13 @@ config CPU_FREQ_GOV_ONDEMAND_2_PHASE
 	tristate "'2-phase' power-efficiency ondemand algorithm"
 	depends on CPU_FREQ_GOV_ONDEMAND
 	help
-	  '2-phase' - This driver adds a new algo to save power
+	  '2-phase' - This driver adds a new algo to save power.
+
+config CPU_FREQ_GOV_INTERACTIVEX
+	tristate "'interactiveX' cpufreq policy governor"
+	help
+	  'interactiveX' - This driver adds a dynamic cpufreq policy governor
+	  designed for latency-sensitive workloads.
 
 config CPU_FREQ_GOV_INTERACTIVEX
 	tristate "'interactiveX' cpufreq policy governor"
@@ -392,6 +398,14 @@ config CPU_FREQ_GOV_CONSERVATIVE
 
 	  If in doubt, say N.
 
+config VDD_USERSPACE
+	bool "VDD sysfs interface"
+	default n
+	depends on CPU_FREQ_STAT
+	depends on ARCH_MSM7X30
+	help
+	  exposes the VDD table to userspace
+
 config CPU_FREQ_VDD_LEVELS
 	bool "CPU Vdd levels sysfs interface"
 	depends on CPU_FREQ_STAT
@@ -430,6 +444,10 @@ config CPU_FREQ_GOV_SUPERBAD
 	  'superbad' - a "superbad" super smooth rendition of a highly optimized "smartass" governor!
 
 	  If in doubt, say N.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7abbf5c... added greaselightning, interactiveX, smartass, smoothass, and superbad
 config CPU_FREQ_GOV_SCARY
 	tristate "'scary' cpufreq governor"
 	depends on CPU_FREQ
@@ -443,6 +461,16 @@ config CPU_FREQ_GOV_GREASELIGHTNING
 	depends on CPU_FREQ
 	help
 	  'greaselightning' - a "greaselightning" optimized governor
+<<<<<<< HEAD
+=======
+
+config CPU_FREQ_USER_FREQS
+	bool "CPUFREQ User Enable/Disable Frequencies via sysfs interface"
+	depends on CPU_FREQ
+	default n
+	help
+	  CPU Vdd levels sysfs interface
+>>>>>>> 7abbf5c... added greaselightning, interactiveX, smartass, smoothass, and superbad
 
 menu "x86 CPU frequency scaling drivers"
 depends on X86
