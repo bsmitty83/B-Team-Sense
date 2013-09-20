@@ -55,11 +55,8 @@
 #define VDD_RAW(mv) (((MV(mv) / V_STEP) - 30) | VREG_DATA)
 
 #define MAX_AXI_KHZ 192000
-
-#ifdef CONFIG_CPU_FREQ_VDD_LEVELS
 #define VIVOW_ACPU_MIN_UV_MV 750U
 #define VIVOW_ACPU_MAX_UV_MV 1450U
-#endif
 
 struct clock_state {
 	struct clkctl_acpu_speed	*current_speed;

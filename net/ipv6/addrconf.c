@@ -2398,7 +2398,7 @@ static void init_loopback(struct net_device *dev)
 
 			/* Failure cases are ignored */
 			if (!IS_ERR(sp_rt)) {
-				sp_ifa-> = sp_rt;
+				sp_ifa->rt = sp_rt;
 				ip6_ins_rt(sp_rt);
 			}
 		}

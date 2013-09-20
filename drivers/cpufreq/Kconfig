@@ -163,16 +163,6 @@ config CPU_FREQ_DEFAULT_GOV_SMOOTHASS
 	help
 	  Use CPUFREQ smoothass as default.
 
-
-config CPU_FREQ_DEFAULT_GOV_INTERACTIVEX
-	bool "interactiveX"
-	select CPU_FREQ_GOV_INTERACTIVEX
-	help
-	  Use the CPUFreq governor 'interactivex' as default. This allows
-	  you to get a full dynamic cpu frequency capable system by simply
-	  loading your cpufreq low-level hardware driver, using the
-	  'interactivex' governor for latency-sensitive workloads.
-
 config CPU_FREQ_DEFAULT_GOV_SCARY
 	bool "scary"
 	select CPU_FREQ_GOV_SCARY
@@ -324,18 +314,6 @@ config CPU_FREQ_GOV_ONDEMAND_2_PHASE
 	help
 	  '2-phase' - This driver adds a new algo to save power.
 
-config CPU_FREQ_GOV_INTERACTIVEX
-	tristate "'interactiveX' cpufreq policy governor"
-	help
-	  'interactiveX' - This driver adds a dynamic cpufreq policy governor
-	  designed for latency-sensitive workloads.
-
-config CPU_FREQ_GOV_INTERACTIVEX
-	tristate "'interactiveX' cpufreq policy governor"
-	help
-	  'interactiveX' - This driver adds a dynamic cpufreq policy governor
-	  designed for latency-sensitive workloads.
-
 config CPU_FREQ_GOV_INTERACTIVE
 	tristate "'interactive' cpufreq policy governor"
 	help
@@ -352,22 +330,6 @@ config CPU_FREQ_GOV_INTERACTIVE
 	  For details, take a look at linux/Documentation/cpu-freq.
 
 	  If in doubt, say N.
-
-config CPU_FREQ_GOV_INTERACTIVEX
-	tristate "'interactiveX' cpufreq policy governor"
-	help
-	  'interactiveX' - Modified version of interactive with sleep+wake code.
-
-		This governor attempts to reduce the latency of clock
-		increases so that the system is more responsive to
-		interactive workloads.
-
-		To compile this driver as a module, choose M here: the
-		module will be called cpufreq_interactive.
-
-		For details, take a look at linux/Documentation/cpu-freq.
-
-		If in doubt, say N.
 
 config CPU_FREQ_GOV_SMARTMAX
 	tristate "'smartmax' cpufreq policy governor"
@@ -397,14 +359,6 @@ config CPU_FREQ_GOV_CONSERVATIVE
 	  For details, take a look at linux/Documentation/cpu-freq.
 
 	  If in doubt, say N.
-
-config VDD_USERSPACE
-	bool "VDD sysfs interface"
-	default n
-	depends on CPU_FREQ_STAT
-	depends on ARCH_MSM7X30
-	help
-	  exposes the VDD table to userspace
 
 config CPU_FREQ_VDD_LEVELS
 	bool "CPU Vdd levels sysfs interface"
@@ -444,10 +398,7 @@ config CPU_FREQ_GOV_SUPERBAD
 	  'superbad' - a "superbad" super smooth rendition of a highly optimized "smartass" governor!
 
 	  If in doubt, say N.
-<<<<<<< HEAD
-=======
 
->>>>>>> 7abbf5c... added greaselightning, interactiveX, smartass, smoothass, and superbad
 config CPU_FREQ_GOV_SCARY
 	tristate "'scary' cpufreq governor"
 	depends on CPU_FREQ
@@ -461,16 +412,6 @@ config CPU_FREQ_GOV_GREASELIGHTNING
 	depends on CPU_FREQ
 	help
 	  'greaselightning' - a "greaselightning" optimized governor
-<<<<<<< HEAD
-=======
-
-config CPU_FREQ_USER_FREQS
-	bool "CPUFREQ User Enable/Disable Frequencies via sysfs interface"
-	depends on CPU_FREQ
-	default n
-	help
-	  CPU Vdd levels sysfs interface
->>>>>>> 7abbf5c... added greaselightning, interactiveX, smartass, smoothass, and superbad
 
 menu "x86 CPU frequency scaling drivers"
 depends on X86
